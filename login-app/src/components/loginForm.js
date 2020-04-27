@@ -9,6 +9,7 @@ export default class LoginForm extends Component{
 		inputUser : 'gio',
 		inputPassword : 'hhh'
 	}
+	this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleSubmit = (e) => {
@@ -29,7 +30,7 @@ export default class LoginForm extends Component{
 			<input 
 				id='user' 
 				name= 'user'
-				onChange = {(e) => this.setState({inputName: e.target.value})}
+				onChange = {(e) => this.setState({inputUser: e.target.value})}
 				placeholder='Introduce el nombre' 
 				value={this.state.inputUser}/>
 		</p>
