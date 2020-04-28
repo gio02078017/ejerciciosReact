@@ -1,5 +1,5 @@
 {
-  "name": "login-app",
+  "name": "mythird-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,8 +30,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0"
   }
 }
