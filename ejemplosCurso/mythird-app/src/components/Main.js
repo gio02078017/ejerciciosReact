@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
+import TodoForm from './TodoForm';
 import logo from '../logo.svg';
 
 import { todos } from '../todos.json';
@@ -11,6 +12,24 @@ class Main extends Component{
         super(props);
         this.state = {
             todos
+        }
+        this.handleAddTodo = this.handleAddTodo.bind(this);
+    }
+
+    handleAddTodo(todo){
+        this.setState({
+            todos: [...this.state.todos, todo]
+        })
+    }
+
+    removeTodo(index){
+        console.log(index);
+        if(window.confirm('Are you sure you want to delete it?')){
+            this.setState({
+                todos: this.state.todos.filter((e,i) => {
+                    return i != index
+                })
+            })
         }
     }
 
@@ -30,6 +49,13 @@ class Main extends Component{
                        <p>{todo.description}</p>
                        <p>{todo.responsible}</p>
                     </div>
+                    <div className='card-footer'>
+                        <button className='btn btn-danger'
+                        onClick={this.removeTodo.bind(this, i)}
+                        >
+                            Delete
+                        </button>
+                    </div>
                 </div>
               </div>
             )
@@ -39,12 +65,21 @@ class Main extends Component{
         return (
             <div className="App">            
             <Navigation title='Tasks' cantidad = {this.state.todos.length}/>
+            
             <div className="container">
                <div className="row mt-4">
-                 {todos}  
+               <div className="col-md-4 text-center">
+                <img src={logo} className="App-logo" alt="logo" />
+              <TodoForm onAddTodo={this.handleAddTodo}></TodoForm>
+            </div>
+
+            <div className="col-md-8">
+              <div className="row">
+                {todos}
+              </div>
+            </div> 
                </div>
             </div>            
-            <img src={logo} className="App-logo" alt="logo" />
           </div>
         )
     }
