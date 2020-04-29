@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+nav div ul li {
+  display: inline;
+  padding: 10px 10px;
+}
+
+nav div ul li a {
+  /*background: #07190B;*/
+  color: #fff;
+  font-size: 18px;
+  padding: 18px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+nav div ul li a:hover{
+  /*background: #fff;*/
+  color: #000;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+footer {
+  background: #343A40;  
+}
+
+footer .container{
+  padding: 20px 0;
+}
+
+footer .option {
+  float: left;
+  width: 300px;
+}
+
+footer .option > h3 {
+  color: #fff;
+  text-align: left;  
+}
+
+footer .option > ul{
+	font-family: sans-serif;
+	list-style: none;
+	padding: 0;
+	margin: 0;  
+}
+
+footer .option > ul li{
+  color: #fff;
+  text-align: left;  
+}
+
+footer .option > ul li a {
+  color: #fff;
+  text-align: left;  
+}
+
+
+footer .copyright {
+  background: #000;
+  width: 100%;
+  padding: 0 5px;
+  clear: both;
+}
+
+footer .copyright p {
+  color: #fff;
+}
+
+.imageMain{
+  color: aqua;
+  width: 200px;
+  height: 200px;
+}
+
+.card {
+  width: 500px;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+}

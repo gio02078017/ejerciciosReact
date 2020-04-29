@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
 import TodoForm from './TodoForm';
+import Card from './Card';
 import logo from '../logo.svg';
 
 import { todos } from '../todos.json';
@@ -37,7 +38,8 @@ class Main extends Component{
         console.log(this.state.todos)
         const todos = this.state.todos.map((todo,i) =>{
             return (
-              <div className="col-md-4">
+              <Card dataCard= {todo} onRemove= {this.removeTodo.bind(this, i)} index= {i}/> 
+              /*<div className="col-md-4">
                 <div className="card mt-4">
                     <div className="card-header">
                        <h3>{todo.title}</h3>
@@ -57,7 +59,7 @@ class Main extends Component{
                         </button>
                     </div>
                 </div>
-              </div>
+              </div>*/
             )
         })
 

@@ -1,0 +1,18 @@
+import React from 'react';
+import './App.css';
+import 'bulma/css/bulma.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import { Footer } from './components/Footer';
+
+function App() {
+  return (
+    <div className="App">
+      <Header title="Menu"/>
+      <Main/>
+      <Footer/>
+    </div>
+  );
+}
+
+export default App;

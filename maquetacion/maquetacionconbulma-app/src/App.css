@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.containerLogin {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.containerWelcome {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
