@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AA0BA,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,OAAO;EACnB,WAAW,EAND,KAAK,EAAE,UAAU;EAO3B,SAAS,EAND,IAAI;CAMY;;AAE5B,AAAA,CAAC,CAAC;EACE,KAAK,EArBC,OAAO;CAqBI;;AAErB,AAAA,EAAE,CAAC;EACC,KAAK,EAxBC,OAAO;CAwBI",
+    "sources": [
+        "../ejercicios sass/css/main1.sass"
+    ],
+    "names": [],
+    "file": "main1.css"
+}

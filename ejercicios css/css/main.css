@@ -1,0 +1,60 @@
+/* Estilos Basicos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #001f3f;
+  color: #111111;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 900px;
+  margin: 2em auto;
+}
+
+/* Header background:#0074d9 */
+header {
+  margin-bottom: 1.5em;
+}
+
+header nav a {
+  padding: 1em;
+  color: #FFF;
+  text-decoration: none;
+  background: rgba(0, 116, 217, 0.2);
+  display: inline-block;
+  margin-right: 1em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+
+header nav a:hover {
+  background: #524b46;
+  text-decoration: none;
+}
+
+/* Section .Main*/
+.main article {
+  padding: 1.5em;
+  background: #fff;
+  margin-bottom: 1.5em;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.main article h2 {
+  color: #0074D9;
+}
+/*# sourceMappingURL=main.css.map */

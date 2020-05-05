@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container-header {
+  display: flex;
+  /*flex-direction: row w;*/
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: gray;
+  min-height: 60px;
+}
+
+.container-header nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-menu ul{
+  list-style: none;
+}
+
+.nav-menu ul li{
+  margin: 0 5px;
+}
+
+.nav-menu  ul li a{
+  text-decoration: none;
+  background: brown;
+  color: white;
+  font-size: 25px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px black;
+}
+
+.nav-menu  ul li a:hover{
+  background: black;
+  box-shadow: 0 2px 2px white;
+}
+
+
+/*# sourceMappingURL=estilos.css.map */
