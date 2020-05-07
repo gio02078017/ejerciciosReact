@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Movie} from './Movie'
 
-export const MoviesList = (props) => {   
+export const MoviesList = (props) => {
+
+    const {movies} = props
 
      return(
         <div className = "MoviesList">
                 {
-                    props.movies.map(movie => {
+                    movies.map(movie => {
                         return (
                             <div 
                                 key={movie.imdbID} 
@@ -24,4 +27,8 @@ export const MoviesList = (props) => {
         </div>
      )
 
+}
+
+MoviesList.propTypes = {
+    movies: PropTypes.array
 }

@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 
 export const Movie = (props) => {
 
-    /*propTypes = {
-        id: PropTypes.string,
-        title: PropTypes.string,
-        year: PropTypes.string,
-        poster: PropTypes.string
-     }*/
-
-     const {id, poster, title, year } = props;
+    const {id, poster, title, year } = props;
 
      return(
         <a href={`/detail/${id}`} className="card">
@@ -31,4 +24,11 @@ export const Movie = (props) => {
         </a>
     )
 
+}
+
+Movie.propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.string,
+    poster: PropTypes.string
 }
