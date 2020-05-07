@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.SearchForm-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.MoviesList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.MoviesList-item{
+  margin-bottom: 24px;
+  width: 48%;
+}
+
+.container-width{
+  width: 50%;
+  margin: auto;
+}
+
+.paragraph{
+  text-justify: auto ;
+}
+
