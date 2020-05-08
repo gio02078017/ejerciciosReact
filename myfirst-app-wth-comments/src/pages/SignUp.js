@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+
 import { ImagenLogin } from '../components/ImageLogin'
 import { ImageTopLogin } from '../components/ImageTopLogin'
 
-
-export default class SignIn extends Component {
+export default class SignUp extends Component {
 
     state = {
         inputEmail: "",
         inputPassword: "",
+        inputUsername:"",
         information: {
+            username:"",
             email: "",
-            password: ""
+            password: "",
+            code: "UDEMYANDROID"
+
         },
-        location: "SignIn",
+        location: "SignUp",
         responseService: {
             token: "",
             username:"",
@@ -25,15 +29,13 @@ export default class SignIn extends Component {
     }
 
     _goHome = () => {
-        console.log("go home");
-        
         this.props.history.push({
             pathname: '/home',
             from: this.props.location.pathname,
             state: {
               medidor: this.state.location
             }
-          });
+        });
     } 
 
 
@@ -48,9 +50,9 @@ export default class SignIn extends Component {
         e.preventDefault();
         this.state.information.email = this.state.inputEmail
         this.state.information.password = this.state.inputPassword
-        
+        this.state.information.username = this.state.inputUsername        
         try{
-            const response = await axios.post('https://www.minitwitter.com:3001/apiv1/auth/login', this.state.information);
+            const response = await axios.post('https://www.minitwitter.com:3001/apiv1/auth/signup', this.state.information);
             const res = await response.data;
             localStorage.setItem("token", res.token)
             this.setState({
@@ -60,17 +62,15 @@ export default class SignIn extends Component {
             
             this._goHome()
         }catch(error){
-           console.log(error);
-           
+           console.log(error);           
         }         
         
     }
 
 
-
     render() {
         return (
-           <div className="principalContainer">
+            <div className="principalContainer">
               <ImageTopLogin/>
               <div className="card sizeTable">
                 <div className="card-body">
@@ -79,9 +79,21 @@ export default class SignIn extends Component {
                         <div className="col-md-6">
                         <form onSubmit= {this._handleSubmit}>
                             <div className="form-group">
+                                <label htmlFor="inputUserName">Usuario</label>
+                                <input 
+                                    onChange = {this._handleChange}
+                                    type="text"
+                                    name="inputUsername"  
+                                    className="form-control" 
+                                    id="inputUserName" 
+                                    aria-describedby="emailHelp" 
+                                    placeholder="Escriba el nombre de usuario" 
+                                    required/>                                
+                            </div>
+                            <div className="form-group">
                                 <label htmlFor="inputEmail">Correo Electronico</label>
                                 <input
-                                    onChange = {this._handleChange} 
+                                    onChange = {this._handleChange}
                                     type="email" 
                                     name="inputEmail" 
                                     className="form-control" 
@@ -93,12 +105,12 @@ export default class SignIn extends Component {
                             <div className="form-group">
                                 <label htmlFor="inputPassword">Contraseña</label>
                                 <input
-                                    onChange = {this._handleChange} 
-                                    type="password" 
+                                    onChange = {this._handleChange}
                                     name="inputPassword" 
+                                    type="password" 
                                     className="form-control" 
                                     id="inputPassword" 
-                                    placeholder="Escriba su contraseña" 
+                                    placeholder="Escriba la contraseña" 
                                     required/>
                             </div>
                              <button type="submit" className="btn btn-primary btn-block">Iniciar Sesión</button>
@@ -106,7 +118,7 @@ export default class SignIn extends Component {
                         </div>
                     </div>
                     <div className="mt-3">
-                      <a  href="/signUp">Si aún no tienes cuenta, registrate aquí</a>
+                      <a  href="/">Si ya dispones de una cuenta, inicie Sesión aquí</a>
                     </div>
                 </div>
               </div>

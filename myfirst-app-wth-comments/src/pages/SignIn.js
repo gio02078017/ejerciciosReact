@@ -46,6 +46,11 @@ export default class SignIn extends Component {
 
     _handleSubmit = async (e) => {
         e.preventDefault();
+        /* console.log("enviando sss")
+        console.log(this.state.inputEmail)
+        console.log(this.state.inputPassword);
+        console.log(this.state.information);        
+        console.log(JSON.stringify(this.state.information));*/
         this.state.information.email = this.state.inputEmail
         this.state.information.password = this.state.inputPassword
         
@@ -53,6 +58,8 @@ export default class SignIn extends Component {
             const response = await axios.post('https://www.minitwitter.com:3001/apiv1/auth/login', this.state.information);
             const res = await response.data;
             localStorage.setItem("token", res.token)
+            //console.log(res);
+            //this.props.history.push(`/home`);
             this.setState({
                responseService: res
             })
@@ -61,6 +68,8 @@ export default class SignIn extends Component {
             this._goHome()
         }catch(error){
            console.log(error);
+           /*console.log(Object.keys(error), error.message);*/ 
+           //console.error(e.response.status);
            
         }         
         

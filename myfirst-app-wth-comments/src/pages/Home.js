@@ -34,22 +34,33 @@ export default class Home extends Component {
     }
 
     componentWillMount(){
-  
+        //console.log("componentWillMount");
+        //console.log(this.props.history.action);        
         if(this.props.history.action === "PUSH" || this.props.history.action === "POP"){
+           //console.log(this.props.location);
+           //console.log(this.props.location.state);
            this.setState({
                location: this.props.location.state.medidor
            })       
         }
 
+        //console.log(this.state);        
+
+        //console.log(this.state.location);
+
         const medidor = this.props.location.state.medidor;
 
+        //console.log(medidor);
 
         if(medidor === "SignIn" ||  medidor === "SignUp"){
+            //console.log("inside signup");
             if(localStorage.getItem("token")){
-               this.setState({
+                //console.log('Data: ', localStorage.getItem("token"))
+                this.setState({
                     token : localStorage.getItem("token")
                 })
-              }
+                //console.log(this.state.token)
+            }
         }        
       }
     
@@ -58,40 +69,57 @@ export default class Home extends Component {
     }
 
     _callTweets = async () => {
+        //console.log("componentDidMount");
+        //console.log(this.state.token);
         const AuthStr = 'Bearer '.concat(this.state.token);
         const headers =  { headers: { Authorization: AuthStr } };
-   
+        //console.log(AuthStr);
+        //console.log(headers);       
+        
         try{
             const response = await axios.get('https://www.minitwitter.com:3001/apiv1/tweets/all', { headers: { Authorization: AuthStr } });
             const res = await response.data;
-             this.setState({
+            //console.log(res);
+            this.setState({
                 tweets: res
-            })            
+            })
+            
+            //console.log("tweets", this.state.tweets);
+            //this.props.history.push(`/home`);
 
         }catch(error){
         console.log(error);
-       }
+        /*console.log(Object.keys(error), error.message);*/ 
+        //console.error(e.response.status);
+        
+        }
     }
 
     confirmModalHandler = async () => {
+        console.log("confirmModalHandler id", this.state.idDelete);
         
         this.setState({
             isShowing: false
         });
 
-
+        console.log("confirmModalHandler");
+        console.log(this.state.token);
         const AuthStr = 'Bearer '.concat(this.state.token);
         const headers =  { headers: { Authorization: AuthStr } };
-
+        console.log(AuthStr);
+        console.log(headers);       
         
         try{
             const response = await axios.delete(`https://www.minitwitter.com:3001/apiv1/tweets/${this.state.idDelete}`, { headers: { Authorization: AuthStr } });
             const res = await response.data;
+            console.log(res);
             this._callTweets()
+            //this.props.history.push(`/home`);
 
         }catch(error){
         console.log(error);
-     
+        /*console.log(Object.keys(error), error.message);*/ 
+        //console.error(e.response.status);        
         }
     }
 
