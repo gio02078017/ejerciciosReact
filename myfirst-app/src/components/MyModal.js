@@ -1,11 +1,12 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 
 //import './Modal.css';
 
 const MyModal = (props) => {
 
 
-    return (
+    return ReactDOM.createPortal(
         <div>
             <div className="modal-wrapper"
                 style={{
@@ -26,7 +27,7 @@ const MyModal = (props) => {
                     <button className="btn-cancel" onClick={props.confirmDelete}>{props.nameConfirm}</button>
                 </div>
             </div>
-        </div>
+        </div>, document.getElementById("modal-root")
     )
 }
 

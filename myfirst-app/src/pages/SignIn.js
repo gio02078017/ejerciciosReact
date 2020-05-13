@@ -25,7 +25,6 @@ export default class SignIn extends Component {
     }
 
     _goHome = () => {
-        console.log("go home");
         
         this.props.history.push({
             pathname: '/home',
@@ -56,7 +55,6 @@ export default class SignIn extends Component {
             this.setState({
                responseService: res
             })
-            console.log("respuesta", this.state.responseService);
             
             this._goHome()
         }catch(error){

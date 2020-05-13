@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import {Tweet} from '../components/Tweet'
 import MyModal from '../components/MyModal';
+import Header from '../components/Header';
 
 export default class Home extends Component {
 
@@ -98,7 +99,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Tweets</h1>
+                <Header title="Tweets"/>
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <MyModal
                     className="modal"
