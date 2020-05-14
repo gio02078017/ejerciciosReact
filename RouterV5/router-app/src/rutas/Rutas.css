@@ -1,0 +1,19 @@
+
+.navActive {
+    color: #ff008d;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    line-height: 3;
+  }
+  
+  a.active {
+    color: #ff008d;
+  }
+
+  .menu{
+    display: flex;
+    justify-content: center;
+  }
