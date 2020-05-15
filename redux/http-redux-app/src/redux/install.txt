@@ -6,3 +6,5 @@ npm i redux-logger
 
 npm i redux-thunk
 
+npm i redux-devtools-extension
+
