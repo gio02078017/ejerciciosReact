@@ -1,0 +1,6 @@
+npm i enzyme
+
+npm i enzyme-adapter-react-16
+
+npm i enzyme-to-json
+
