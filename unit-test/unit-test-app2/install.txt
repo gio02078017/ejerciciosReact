@@ -1,0 +1,21 @@
+npm install mocha
+
+npm install mocha --save-dev
+
+npm install chai chai-enzyme enzyme enzyme-adapter-react-16 cheerio --save-dev
+
+npm install @babel/core @babel/register —-save-dev
+
+crear archivo .mocharc.js en la raiz
+
+pegar esto
+
+module.exports = {
+    recursive: true,
+    slow: 75,
+    timeout: 5000,
+    spec: [
+        'src/**/*.test.js',
+        'src/**/*.spec.js',
+    ],
+};
