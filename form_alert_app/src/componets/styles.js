@@ -10,11 +10,12 @@ import {
 
 export const styles = makeStyles({
   container: {
-    margin: "0 0 0 2px",
-    width: "98%",
+    margin: "2px auto",
+    width: "40%",
     height: "88vh",
     overflow: "hidden",
     overflowX: "hidden",
+    alignItems: "center",
     "&:hover": {
       overflowY: "auto"
     }
