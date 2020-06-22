@@ -171,6 +171,15 @@ export const MyForm  = props => {
                     className={classes.scrollContainer}
                 >
                     <FormikSelectField
+                        name={nameLinea}
+                        label="*Línea"
+                        margin="normal"
+                        onChange={ handleChange}
+                        options={lineaState}
+                        fullWidth
+                    />
+
+                    <FormikSelectField
                         name={nameSujeto}
                         label="*Sujeto"
                         margin="normal"
@@ -212,16 +221,8 @@ export const MyForm  = props => {
                         onChange={ handleChange}
                     />
                     <FormikSelectField
-                        name={nameLinea}
-                        label="*Línea"
-                        margin="normal"
-                        onChange={ handleChange}
-                        options={lineaState}
-                        fullWidth
-                    />
-                    <FormikSelectField
                         name={nameEvento}
-                        label="*Evento"
+                        label="*Estado"
                         margin="normal"
                         onChange={ handleChange}
                         options={eventoState}
@@ -229,7 +230,7 @@ export const MyForm  = props => {
                     /> 
                     <FormikSelectField
                         name={nameMedicion}
-                        label="*Mecanismo medición"
+                        label="*Clase de alerta"
                         margin="normal"
                         onChange={ handleChange}
                         options={mecanismoMedicionState}
@@ -237,7 +238,7 @@ export const MyForm  = props => {
                     /> 
                     <FormikSelectField
                         name={nameEventoMedicion}
-                        label="*Evento Medición"
+                        label="*Evento"
                         margin="normal"
                         onChange={ handleChange}
                         options={eventoMedicionState}
@@ -250,7 +251,15 @@ export const MyForm  = props => {
                         onChange={ handleChange}
                         options={parametroState}
                         fullWidth
-                    /> 
+                    />
+                    <FormikSelectField
+                        name={nameParametro}
+                        label="*Referencia"
+                        margin="normal"
+                        onChange={ handleChange}
+                        options={parametroState}
+                        fullWidth
+                    />  
                     <FormikSelectField
                         name={nameTipoVehiculo}
                         label="*Tipo de Vehículo"
