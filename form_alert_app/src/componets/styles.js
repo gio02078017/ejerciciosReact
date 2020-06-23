@@ -38,6 +38,16 @@ export const styles = makeStyles({
   textField: {
     width: "90%"
   },
+  textFieldToHundred: {
+    width: "99%"
+  },
+  textFieldSmall: {
+    width: "48%"
+  },
+  formControlSmall: {
+    width: "48%",
+    fontSize: "10px"
+  },
   formControl: {
     width: "98%",
     margin: "3vh 0 0 1vh",

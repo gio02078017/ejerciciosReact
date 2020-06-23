@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {MyForm} from '../componets/MyForm'
+import {MyForm2} from '../componets/MyForm2'
 import { Typography } from "@material-ui/core";
 
 export default class CreateAlertPage extends Component {
@@ -7,7 +7,7 @@ export default class CreateAlertPage extends Component {
         return (
             <div>
                 <Typography>hola create new alerta</Typography>
-                <MyForm/>
+                <MyForm2/>
             </div>
         )
     }
