@@ -11,6 +11,8 @@ import {
   import Autocomplete from '@material-ui/lab/Autocomplete';
   import PropTypes from 'prop-types'
   import { styles } from "./styles";
+  import Asynchronous from './Asynchronous'
+  import GoogleMaps from './GoogleMaps'
 
 
 export const MyForm2  = ({lineOptions, subjectOptions, routesOrServiceIdOptions, 
@@ -187,6 +189,8 @@ export const MyForm2  = ({lineOptions, subjectOptions, routesOrServiceIdOptions,
                     justify="flex-start"
                     className={classes.scrollContainer}
                 >
+                    <Asynchronous/>
+                    <GoogleMaps/>
                     <FormControl className={classes.formControl}>
                         <InputLabel id={nameLine}>{labelField.line}</InputLabel>
                         <Select
